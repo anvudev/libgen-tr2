@@ -1,0 +1,18 @@
+# type Author {
+#   id: ID!
+#   name: String!
+#   bio: String!
+#   birth_date: String!       # Bạn có thể đổi sang Date nếu server hỗ trợ scalars
+#   created_at: String!
+#   updated_at: String
+# }
+
+# input CreateAuthorInput {
+#   name: String!
+#   bio: String!
+#   birth_date: String!
+# }
+
+# type Mutation {
+#   createAuthor(input: CreateAuthorInput!): Author!
+# }
