@@ -13,6 +13,7 @@
 #   birth_date: String!
 # }
 
-# type Mutation {
-#   createAuthor(input: CreateAuthorInput!): Author!
-# }
+type Mutation {
+  createAuthor(input: CreateAuthorInput!): Author!
+  sayHello(name: String!): String!
+}
