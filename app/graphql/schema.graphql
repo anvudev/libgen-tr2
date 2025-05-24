@@ -1,19 +1,27 @@
-# type Author {
-#   id: ID!
-#   name: String!
-#   bio: String!
-#   birth_date: String!       # Bạn có thể đổi sang Date nếu server hỗ trợ scalars
-#   created_at: String!
-#   updated_at: String
-# }
+type Query {
+  _empty: String
+}
 
-# input CreateAuthorInput {
-#   name: String!
-#   bio: String!
-#   birth_date: String!
-# }
+type Author {
+  id: ID!
+  name: String!
+  bio: String
+  birth_date: String
+  created_at: String
+  updated_at: String
+}
 
-type Mutation {
-  createAuthor(input: CreateAuthorInput!): Author!
-  sayHello(name: String!): String!
+type AuthorPaginated {
+  data: [Author!]!
+  total: Int!
+  page: Int!
+  limit: Int!
+}
+
+type Query {
+  authors(
+    page: Int = 1
+    limit: Int = 10
+    name: String
+  ): AuthorPaginated!
 }

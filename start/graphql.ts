@@ -1,6 +1,15 @@
-import graphql from '@foadonis/graphql/services/main'
+// server.ts (Apollo thuần, không Adonis)
+import resolvers from "#graphql/resolvers/author_resolver";
+import { ApolloServer } from "@apollo/server";
+import { startStandaloneServer } from "@apollo/server/standalone";
+import { readFileSync } from "fs";
 
-graphql.resolvers([
-  () => import('#graphql/resolvers/demo_resolver'),
-  () => import('#graphql/resolvers/author_resolver')
-])
+const typeDefs = readFileSync("./app/graphql/schema.graphql", "utf8");
+
+const server = new ApolloServer({ typeDefs, resolvers });
+
+startStandaloneServer(server, {
+  listen: { port: 3334 },
+}).then(({ url }) => {
+  console.log(`🚀 Apollo ready at ${url}`);
+});

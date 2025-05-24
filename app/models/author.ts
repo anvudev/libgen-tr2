@@ -4,6 +4,7 @@ import  Book from './book.js'
 import type { HasMany } from '@adonisjs/lucid/types/relations'
 
 export default class Author extends BaseModel {
+  static table = 'author'
   @column({ isPrimary: true })
   declare id: number
 

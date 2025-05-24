@@ -10,6 +10,7 @@ export default class extends BaseSchema {
       table.text('bio').nullable()
       table.date('birth_date').nullable()
       table.timestamp('created_at', { useTz: true }).notNullable()
+      table.timestamp('updated_at', { useTz: true }).nullable() 
     })
   }
 

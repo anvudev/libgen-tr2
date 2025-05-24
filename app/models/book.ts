@@ -4,7 +4,9 @@ import type { BelongsTo } from '@adonisjs/lucid/types/relations';
 import Author from './author.js';
 
 export default class Book extends BaseModel {
-    @column({ isPrimary: true })
+  static table = 'book'
+
+  @column({ isPrimary: true })
   declare id: string
 
   @column()

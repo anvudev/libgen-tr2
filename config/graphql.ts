@@ -1,13 +1,12 @@
-import env from '#start/env'
-import { defineConfig } from '@foadonis/graphql'
+// import env from '#start/env'
 
-const isProduction = env.get('NODE_ENV') === 'production'
+// const isProduction = env.get('NODE_ENV') === 'production'
 
-export default defineConfig({
-  path: '/graphql',
-  apollo: {
-    introspection: !isProduction,
-    playground: !isProduction,
-  },
-  emitSchemaFile: true,
-})
+// export default defineConfig({
+//   path: '/graphql',
+//   apollo: {
+//     introspection: !isProduction,
+//     playground: !isProduction,
+//   },
+//   emitSchemaFile: true,
+// })

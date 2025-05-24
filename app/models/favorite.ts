@@ -6,6 +6,8 @@ import Book from './book.js'
 import Author from './author.js'
 
 export default class Favorite extends BaseModel {
+  static table = 'favorite'
+  
  @column({ isPrimary: true })
   declare id: string
 
